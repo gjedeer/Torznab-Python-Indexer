@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from providers import piratebay
+from providers import tribler
 
 
 class Endpoints:
     piratebay = 'tpb'
+    tribler = 'tribler'
 
 
 def index(request):
@@ -11,7 +13,8 @@ def index(request):
         return render(request, 'gateway/caps.html', {}, content_type='application/rss+xml')
 
     enabled_providers = {
-        Endpoints.piratebay: piratebay.PirateBay()
+        Endpoints.piratebay: piratebay.PirateBay(),
+        Endpoints.tribler: tribler.Tribler(),
     }
 
     elements = []

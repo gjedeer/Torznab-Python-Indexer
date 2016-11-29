@@ -4,7 +4,7 @@ import re
 
 
 class PirateBay(Base):
-    url = 'https://thepiratebay.se/%s'
+    url = 'https://thepiratebay.org/%s'
     new_shows_qs = 'tv/latest/'
     search_qs = 'search/%s/0/99/205'
     elem_path = '//*[@id="searchResult"]/tr[*]'
